@@ -1,0 +1,35 @@
+Recientemente ha tocado implementar el protocolo de MySQL, el original, que se 
+definió (con pequeños cambios) en las versiones iniciales (no he conseguido 
+rastrear la fecha exacta pero en el 2000 ya estaba allí). El protocolo es muy 
+muy simple, basado en texto (y por lo tanto no especialmente eficiente) con 
+una cabecera con solo dos campos (uno de los cuales, el número de secuencia, 
+la mayoría de sus implementaciones ignoran).
+
+Curiosamente ese protocolo ha resistido muy bien el test del tiempo, MariaDB 
+siguió utilizándolo, todos (!) los lenguajes que conoces tienen integración 
+con MySQL/MariaDB y por lo tanto implementan ese protocolo. JDBC (las 
+diferentes implementaciones que hay de ese driver) con todas sus abstracciones 
+al final de la cadena utiliza ese protocolo. El mundo reactive ha llegado al 
+jdbc y a MySQL y por supuesto utiliza ese protocolo. Sobre ese protocolo se 
+han montado soluciones avanzadas de replicación como galera y se han 
+construido productos tan útiles y usados como ProxySQL. Otras bases de datos (
+p.e. ClickHouse,Aurora,TiDB) lo implementan.
+
+Aún así ese protocolo tiene limitaciones (p.e. solo devuelve un last insert 
+id, no te voy a contar cómo te da la información del resto de ids para que 
+duermas tranquilo) y no conozco a nadie que haya dejado de utilizar MySQL por 
+las limitaciones/inconvenientes de su protocolo.
+
+My point es que cualquiera de los protocolos que he montado es más complejo, 
+ninguno de nosotros hubiese montado algo tan sencillo, lo hubiese llenado de 
+opciones y hubiese contemplado todos los corner cases y para qué?. La bondad 
+de una base de datos (MySQL/MariaDB en este caso) no reside en la eficiencia 
+de su protocolo de comunicaciones, monta algo rápido y simple que te permita 
+enseñar tu producto y céntrate en tu core. Si más tarde es necesario ya lo 
+extenderás como de hecho se hizo (compresión, protocolo binario para consultas 
+preparadas, vulnerabilidades de seguridad, etc).
+
+Como curiosidad: MySQL (que no mariadb) esta apostando por una versión nueva y 
+super molona basada en protocol-buffers pero me parece que este cambio 
+responde más a una estrategia comercial (distinguirse de mariadb que todavía 
+utiliza el anterior) que a razones técnicas.
