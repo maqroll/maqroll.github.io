@@ -33,3 +33,5 @@ Como curiosidad: MySQL (que no mariadb) esta apostando por una versión nueva y
 super molona basada en protocol-buffers pero me parece que este cambio 
 responde más a una estrategia comercial (distinguirse de mariadb que todavía 
 utiliza el anterior) que a razones técnicas.
+
+21 de Junio, 2020
