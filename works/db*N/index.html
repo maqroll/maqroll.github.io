@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+
+section {
+  background: #000;
+  color: #fff;
+  padding: 2em;
+  font-family: "PT Serif", Baskerville, Georgia;
+}
+
+#follow {
+  background: none;
+}
+
+.grey {
+  color: #777;
+}
+
+a:link,
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+</style>
+
+<section style="text-align:center;padding-top:5em;">
+  <p style="font-size:200%;">No data is big enough for <b><a href="">db*N</a></b>
+  <p class="grey" style="font-size:50%;">Scroll down to continue.
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:200%">
+  <p>Some tables have grown too big. 
+  <br>Your queries have slowed down.
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:300%;">
+  <i>Parallelize!!</i>
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:200%;">
+  <p>I can't.
+  <br/>MySQL is mono-thread.
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:200%;">
+  <i>Setup a cluster.
+  <br/>Shard your data.
+  <br/>Query all nodes in parallel.</i>
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:200%;">
+  <p>Wait!!.
+  <br/>Most queries need aggregation.
+  <br/>Min/max/sum/group..
+</section>
+
+<section style="text-align:center;padding-top:2em;font-size:200%;">
+  <i>Ok.
+  <br/>Install <a href="">db*N</a></i>
+</section>
+
+<section style="text-align:center;padding:1.5em;font-size:200%;">
+  <p><a href="">db*N</a> sits in front of your nodes
+  <br/>and gives you the appearance of
+  <br/>a MySQL database.
+</section>
+
+<section style="text-align:center;padding:.35em;font-size:200%;">
+  <p>Transparently 
+  <br/>query your shards in parallel
+  <br/>and handle the aggregations.
+  <br/>Uses standard SQL.
+</section>
+
+<section style="text-align:center;padding:2em;font-size:200%;">
+  <p>Easy now. 
+</section>
+
+<script src="https://unpkg.com/d3@4.1.1/build/d3.min.js"></script>
+<script src="https://maqroll.github.io/stack/stack.v2.js"></script>
+<script>
+
+var mystack = stack()
+    .on("activate", activate)
+    .on("deactivate", deactivate);
+
+var section = d3.selectAll("section"),
+    follow = d3.select("#follow"),
+    followAnchor = d3.select("#follow-anchor"),
+    lorenz = d3.select("#lorenz"),
+    followIndex = section[0].indexOf(follow.node()),
+    lorenzIndex = section[0].indexOf(lorenz.node());
+
+function refollow() {
+  followAnchor.style("top", (followIndex + (1 - mystack.scrollRatio()) / 2 - d3.event.offset) * 100 + "%");
+}
+
+function activate(d, i) {
+  if (i === followIndex) mystack.on("scroll.follow", refollow);
+}
+
+function deactivate(d, i) {
+  if (i === followIndex) mystack.on("scroll.follow", null);
+}
+
+</script>
