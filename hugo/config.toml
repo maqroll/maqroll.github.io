@@ -1,0 +1,4 @@
+baseURL = "https://maqroll.github.io/"
+languageCode = "en-us"
+title = "maqroll personal site"
+disableKinds = ["taxonomyTerm"]
