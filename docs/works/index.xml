@@ -19,5 +19,17 @@ As of 2020/09/01 is alive and (seems to be) using the same platform.
    </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://maqroll.github.io/works/metropolis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/works/metropolis/</guid>
+      <description> Metropolis Around 2008 we designed a new core-banking architecture for a major bank in Spain codenamed &#34;Metropolis&#34;.
+That technology later became CECA&#39;s reference architecture.
+Still in use.
+   </description>
+    </item>
+    
   </channel>
 </rss>
