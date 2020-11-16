@@ -1,7 +1,8 @@
-+++
+---
 
-+++
+title: "Metropolis"
 
+---
 {{< rawhtml >}}
             <h1>Metropolis</h1>
             <div class=body>

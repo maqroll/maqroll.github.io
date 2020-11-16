@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://maqroll.github.io/works/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>BePP</title>
       <link>https://maqroll.github.io/works/bepp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -20,7 +20,7 @@ As of 2020/09/01 is alive and (seems to be) using the same platform.
     </item>
     
     <item>
-      <title></title>
+      <title>Metropolis</title>
       <link>https://maqroll.github.io/works/metropolis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -32,7 +32,18 @@ Still in use.
     </item>
     
     <item>
-      <title></title>
+      <title>password()</title>
+      <link>https://maqroll.github.io/works/passfn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/works/passfn/</guid>
+      <description> password() Instead of storing your passwords calculate them using a secure hash function conveniently.
+oneshallpass.com reincarnated as a tampermonkey script available through a hotkey.
+   </description>
+    </item>
+    
+    <item>
+      <title>rc4cygwin</title>
       <link>https://maqroll.github.io/works/rc4cygwin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

@@ -1,7 +1,8 @@
-+++
+---
 
-+++
+title: "rc4cygwin"
 
+---
 {{< rawhtml >}}
             <h1>rc shell for cygwin</h1>
             <div class=body>
