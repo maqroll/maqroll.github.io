@@ -32,6 +32,19 @@ Still in use.
     </item>
     
     <item>
+      <title>NRT sales funnel</title>
+      <link>https://maqroll.github.io/works/sales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/works/sales/</guid>
+      <description> NRT sales funnel Imagine the look&amp;feel of funnel-graph-js but updated in near-realtime (less than 5 seconds lag) segmented by country, device type, etc...
+You got it!
+Besides: top N products in each step (visits, carts and orders) filterable for different criteria(country, section, etc..).
+Sure you&#39;ll miss something like this next BF.
+   </description>
+    </item>
+    
+    <item>
       <title>password()</title>
       <link>https://maqroll.github.io/works/passfn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
