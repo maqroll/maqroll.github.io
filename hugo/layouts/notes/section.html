@@ -1,0 +1,12 @@
+{{ partial "notes_header.html" . }}
+<div class="pad2y limiter content">
+	<div class="writing nu">
+   {{ range .Pages }}
+        <div>
+            <a href="{{.Permalink}}">{{.Title}}</a>
+        </div>
+        <time>{{.Date.Format "2006-01-02"}}</time>
+    {{ end }}
+</div>
+</div>    
+{{ partial "footer.html" . }}
