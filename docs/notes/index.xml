@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes - loteroc@gmail.com on maqroll personal site</title>
+    <link>https://maqroll.github.io/notes/</link>
+    <description>Recent content in Notes - loteroc@gmail.com on maqroll personal site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nice to meet you, Vert.x!</title>
+      <link>https://maqroll.github.io/notes/post-20211024/</link>
+      <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20211024/</guid>
+      <description>Almost a year ago we decided to give Eclipse Vert.x an opportunity for a new product we were cooking.
+The product involves generating NRT indicators over several streams of data coming from Kafka. Volume is high in general but it has to cope with peak retail sales (BF, sales season, etc).
+Usually we&amp;rsquo;d turn to KStreams for this kind of processing. To reduce latency, in this product we decided to serve the indicators directly to consumers over websockets.</description>
+    </item>
+    
+  </channel>
+</rss>
