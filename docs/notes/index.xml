@@ -6,7 +6,19 @@
     <description>Recent content in Notes - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nice to meet you, RandomBeans!</title>
+      <link>https://maqroll.github.io/notes/post-20211027/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20211027/</guid>
+      <description>Hand-coding complex domain entities (with many nested levels) for unit testing is a major pain point.
+Taking Avro into consideration make the problem worse (polymorphic union types).
+Discovering RandomBeans extension it&amp;rsquo;s been a relief.
+Recommended!.</description>
+    </item>
+    
     <item>
       <title>Nice to meet you, Vert.x!</title>
       <link>https://maqroll.github.io/notes/post-20211024/</link>
