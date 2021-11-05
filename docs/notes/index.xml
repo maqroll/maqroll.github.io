@@ -6,7 +6,19 @@
     <description>Recent content in Notes - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hacking Kafka Connect</title>
+      <link>https://maqroll.github.io/notes/post-20211104/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20211104/</guid>
+      <description>Second time we face the same problem: process Avro messages with Kafka Connect honoring a schema already setup in Schema Registry.
+It looks like the typical interview problem you&amp;rsquo;ll never find in real life. But you know, it&amp;rsquo;s sitting on the sofa.
+The interest of this note (if any) is not providing an answer but thinking about why we solved it differently the second time.
+ Kafka Connect is a generic framework for processing Kafka messages.</description>
+    </item>
+    
     <item>
       <title>Nice to meet you, RandomBeans!</title>
       <link>https://maqroll.github.io/notes/post-20211027/</link>

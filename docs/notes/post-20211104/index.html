@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <style>
+        :root{--mono-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console",
+            "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;--sans-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+            helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+            sans-serif}body{margin:0 auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:#000;text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:#333}p,ul{margin:1rem 0}ul ul{margin:0}iframe{border:0}.small,small{font-size:14px}body,h1 a{color:#111}h1,h2{margin-bottom:.5rem;line-height:1.25;font-weight:600}h1{font-size:32px;letter-spacing:.004em}h2{font-size:1.5rem;letter-spacing:.009em}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad2y{padding-top:20px;padding-bottom:20px}@media screen and (max-width:640px){.limiter{width:auto}}@media screen and (min-width:640px){.nu a{text-decoration:none}.nu a:hover{text-decoration:underline}}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid #000;padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:40px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.s{color:#d01040}.writing time{padding-right: .25em;color: #333;font-variant-numeric: tabular-nums;letter-spacing: -.012em;white-space: pre;}.writing {display: grid;grid-column-gap: 5px;grid-row-gap: 5px;grid-template-columns: 1fr min-content;}
+    </style>
+    <title>Hacking Kafka Connect - loteroc@gmail.com</title>
+    <link href=https://maqroll.github.io/works/bepp/index.html rel=canonical>
+</head>
+
+<body>
+    
+    <div class=pad2y style=position:relative>
+        <nav class=header-wrap>
+            <div class="header nu limiter no-print">
+                <h1 style="line-height:1.6;font-size:1rem;margin:0 0 0.25em 0;">loteroc@gmail.com</h1>
+                <ul style=list-style:none;padding:0;margin:0;>
+                    
+                    <li><a href=/>Works</a></li>
+                    <li><a href=/notes>Notes</a>⇠</li>
+                </ul>
+            </div>
+        </nav>
+<div class="pad2y limiter content">
+	<h1>Hacking Kafka Connect</h1>
+	<div class="body">
+		<p>Second time we face the same problem: <em>process Avro messages with <a href="https://docs.confluent.io/platform/current/connect/index.html">Kafka Connect</a> honoring a schema already setup in Schema Registry</em>.</p>
+<p>It looks like the typical interview problem you&rsquo;ll never find in real life. But you know, it&rsquo;s sitting on the sofa.</p>
+<p>The interest of this note (if any) is not providing an answer but thinking about why we solved it differently the second time.</p>
+<hr>
+<p>Kafka Connect is a generic framework for processing Kafka messages. Any transformation, any input/output format. You could even reuse the transformation across format changes.</p>
+<p>You could because the transformation does not depend on the format. To achieve this Kafka Connect has a conversion layer (similar to the serializers / deserializers of Kafka Streams). Simplifying a bit we can say that this layer transforms the message that comes from Kafka into a neutral format that is the one on which the transformation is defined. If you change the format of the messages you just have to change the conversion layer.</p>
+<p>This neutral format could have an schema (i.e. Avro). In that case, conversors handle both message and schema conversion.</p>
+<p>Conversors are also used to handle the transformation from neutral format into specific format used to store messages in Kafka (i.e. JSON or Avro).</p>
+<p>In our case both input and output format were Avro, both Avro schemas were the same (no message schema transformation) and were already setup in Schema Registry. Our process (for reasons that are difficult both to explain and understand) has no rights to write in Schema Registry.</p>
+<p>Kafka Connect includes a suite of conversors for typical formats  (Json, Protobuf, Avro, etc&hellip;) and usually it&rsquo;s not necessary to create new conversors.</p>
+<p>When you transform <strong>in a generic way</strong> messages and schemas between two formats (i.e. Avro and Kafka Connect neutral format) rich and generic always there are <strong>mismatches</strong> (or limitations).
+Avro out-of-the-box conversors handle most cases but <strong>they weren&rsquo;t designed to honor the original schema even if the schema doesn&rsquo;t change</strong> (why would they?) Imagine identity transformation applied over Avro messages in the input and pushing Avro messages in the output. You won&rsquo;t loose any information but input/output messages (and schemas) are not going to be 100% equal (but for some trivial examples).</p>
+<p>This conversion layer was designed to define transformations without taking into account input and output formats. And they do it fine. Not to handle <strong>corner-cases</strong> like these.</p>
+<hr>
+<p>The first time we solved it by defining a new Avro converter (after Confluent&rsquo;s). Avro converter is not trivial, so we opted to do &ldquo;vendoring&rdquo;. It works well but soon we found a drawback: in successive versions Confluent chose to sensibly refactor that connector and that caused our converter to stop working. How is it possible? That converter depends on several libraries that we did not include because they were the same ones used by your converter and they were already available. Its refactoring removed some of the libraries we depended on.</p>
+<p>The second time we ran into this problem we were aware of the robustness limitations of the previous solution.</p>
+<p>On this occasion, we completely do without Avro converters. The transformation was in charge of managing the parsing of the Avro message and its serialization using the standard <a href="https://docs.confluent.io/platform/current/schema-registry/serdes-develop/serdes-avro.html">serializers/deserializers</a>. <strong>This solution loses the generality of the format (the transformation only works on Avro messages) and has the advantage that it is generic (it is robust to changes in the Avro scheme) and more efficient (the transformation to / from the neutral format is not necessary).</strong></p>
+<p>It&rsquo;s a bit unconventional but at this moment I prefer it to the more &ldquo;by the book&rdquo; solution.</p>
+
+	</div>
+</div>
+    </div>
+</body>
+
+</html>
