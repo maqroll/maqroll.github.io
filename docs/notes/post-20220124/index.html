@@ -9,7 +9,7 @@
             helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
             sans-serif}body{margin:0 auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:#000;text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:#333}p,ul{margin:1rem 0}ul ul{margin:0}iframe{border:0}.small,small{font-size:14px}body,h1 a{color:#111}h1,h2{margin-bottom:.5rem;line-height:1.25;font-weight:600}h1{font-size:32px;letter-spacing:.004em}h2{font-size:1.5rem;letter-spacing:.009em}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad2y{padding-top:20px;padding-bottom:20px}@media screen and (max-width:640px){.limiter{width:auto}}@media screen and (min-width:640px){.nu a{text-decoration:none}.nu a:hover{text-decoration:underline}}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid #000;padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:40px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.s{color:#d01040}.writing time{padding-right: .25em;color: #333;font-variant-numeric: tabular-nums;letter-spacing: -.012em;white-space: pre;}.writing {display: grid;grid-column-gap: 5px;grid-row-gap: 5px;grid-template-columns: 1fr min-content;}
     </style>
-    <title>Notes - loteroc@gmail.com - loteroc@gmail.com</title>
+    <title>InMemoryKeyValueStore without serialization/deserialization - loteroc@gmail.com</title>
     <link href=https://maqroll.github.io/works/bepp/index.html rel=canonical>
 </head>
 
@@ -27,30 +27,28 @@
             </div>
         </nav>
 <div class="pad2y limiter content">
-	<div class="writing nu">
-   
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220124/">InMemoryKeyValueStore without serialization/deserialization</a>
-        </div>
-        <time>2022-01-24</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211104/">Hacking Kafka Connect</a>
-        </div>
-        <time>2021-11-04</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211027/">Nice to meet you, RandomBeans!</a>
-        </div>
-        <time>2021-10-27</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211024/">Nice to meet you, Vert.x!</a>
-        </div>
-        <time>2021-10-24</time>
-    
+	<h1>InMemoryKeyValueStore without serialization/deserialization</h1>
+	<div class="body">
+		<p><a href="https://kafka.apache.org/documentation/streams/">KStreams</a> provides an in-memory key value store (backed by a topic).</p>
+<p>For instance:</p>
+<pre><code>    builder.addGlobalStore(
+	Stores.keyValueStoreBuilder(
+		Stores.inMemoryKeyValueStore(STORES), 
+		Serdes.String(), Serdes.String()),
+        STORES_TOPIC,
+        Consumed.with(Serdes.String(), Serdes.String()),
+        () -&gt; new GlobalStoreUpdater&lt;&gt;(STORES));
+
+</code></pre><p>declares one backed by STORES_TOPIC and called STORES. Both key and value are strings.</p>
+<p>Being in-memory, heap is a limit to the size of the store.</p>
+<p>We use it mostly to implement global stores for master data. Any other system keep master data updated in the topic and we consume it directly into the global store as a convenient way to make key-value searches. It&rsquo;s not declared read-only and in fact you could perform updates/deletes/inserts on it and everything should work (changes should propagate to the re of the nodes in the topology shortly afterwards).</p>
+<p>Behind the scenes, no matter key and value types you declare, Stores.inMemoryKeyValueStore() stores the data in a <a href="https://github.com/apache/kafka/blob/4ceb2191e1c5e13f64300b4377eb9cd7a23b3753/streams/src/main/java/org/apache/kafka/streams/state/internals/InMemoryKeyValueStore.java#L47">TreeMap&lt;Bytes,byte[]&gt;</a>.</p>
+<p>Although provides a KeyValueStore&lt;K,V&gt; abstraction, internally it works always as a KeyValueStore&lt;byte[],byte[]&gt;. On every search it requires to serialize provided key and deserialize found value.</p>
+<p>We <a href="https://github.com/maqroll/inmemorykeystore_without_serialization">sketched</a> a minimal implementation that doesn&rsquo;t require serialization/deserialization overhead.</p>
+<p>It works for us and maybe will work for you.</p>
+
+	</div>
 </div>
-</div>    
     </div>
 </body>
 

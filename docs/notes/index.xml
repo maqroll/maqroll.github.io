@@ -6,7 +6,20 @@
     <description>Recent content in Notes - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InMemoryKeyValueStore without serialization/deserialization</title>
+      <link>https://maqroll.github.io/notes/post-20220124/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20220124/</guid>
+      <description>KStreams provides an in-memory key value store (backed by a topic).
+For instance:
+ builder.addGlobalStore( Stores.keyValueStoreBuilder( Stores.inMemoryKeyValueStore(STORES), Serdes.String(), Serdes.String()), STORES_TOPIC, Consumed.with(Serdes.String(), Serdes.String()), () -&amp;gt; new GlobalStoreUpdater&amp;lt;&amp;gt;(STORES)); declares one backed by STORES_TOPIC and called STORES. Both key and value are strings.
+Being in-memory, heap is a limit to the size of the store.
+We use it mostly to implement global stores for master data. Any other system keep master data updated in the topic and we consume it directly into the global store as a convenient way to make key-value searches.</description>
+    </item>
+    
     <item>
       <title>Hacking Kafka Connect</title>
       <link>https://maqroll.github.io/notes/post-20211104/</link>
