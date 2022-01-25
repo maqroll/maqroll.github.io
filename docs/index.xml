@@ -17,7 +17,7 @@
 For instance:
  builder.addGlobalStore( Stores.keyValueStoreBuilder( Stores.inMemoryKeyValueStore(STORES), Serdes.String(), Serdes.String()), STORES_TOPIC, Consumed.with(Serdes.String(), Serdes.String()), () -&amp;gt; new GlobalStoreUpdater&amp;lt;&amp;gt;(STORES)); declares one backed by STORES_TOPIC and called STORES. Both key and value are strings.
 Being in-memory, heap is a limit to the size of the store.
-We use it mostly to implement global stores for master data. Any other system keep master data updated in the topic and we consume it directly into the global store as a convenient way to make key-value searches.</description>
+We use it mostly to implement global stores for master data. Any other system keeps master data updated in the topic and we consume it directly into the global store as a convenient way to make key-value searches.</description>
     </item>
     
     <item>
