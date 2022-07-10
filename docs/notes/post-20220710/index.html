@@ -9,7 +9,7 @@
             helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
             sans-serif}body{margin:0 auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:#000;text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:#333}p,ul{margin:1rem 0}ul ul{margin:0}iframe{border:0}.small,small{font-size:14px}body,h1 a{color:#111}h1,h2{margin-bottom:.5rem;line-height:1.25;font-weight:600}h1{font-size:32px;letter-spacing:.004em}h2{font-size:1.5rem;letter-spacing:.009em}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad2y{padding-top:20px;padding-bottom:20px}@media screen and (max-width:640px){.limiter{width:auto}}@media screen and (min-width:640px){.nu a{text-decoration:none}.nu a:hover{text-decoration:underline}}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid #000;padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:40px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.s{color:#d01040}.writing time{padding-right: .25em;color: #333;font-variant-numeric: tabular-nums;letter-spacing: -.012em;white-space: pre;}.writing {display: grid;grid-column-gap: 5px;grid-row-gap: 5px;grid-template-columns: 1fr min-content;}
     </style>
-    <title>Notes - loteroc@gmail.com - loteroc@gmail.com</title>
+    <title>Rockset - loteroc@gmail.com</title>
     <link href=https://maqroll.github.io/works/bepp/index.html rel=canonical>
 </head>
 
@@ -27,35 +27,16 @@
             </div>
         </nav>
 <div class="pad2y limiter content">
-	<div class="writing nu">
-   
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220710/">Rockset</a>
-        </div>
-        <time>2022-06-10</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220124/">InMemoryKeyValueStore without serialization/deserialization</a>
-        </div>
-        <time>2022-01-24</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211104/">Hacking Kafka Connect</a>
-        </div>
-        <time>2021-11-04</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211027/">Nice to meet you, RandomBeans!</a>
-        </div>
-        <time>2021-10-27</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211024/">Nice to meet you, Vert.x!</a>
-        </div>
-        <time>2021-10-24</time>
-    
+	<h1>Rockset</h1>
+	<div class="body">
+		<p>If you do stateful processing in <a href="https://kafka.apache.org/documentation/streams/">Kafka Streams</a>, you have already heard of Rocksdb. <a href="http://rocksdb.org">Rocksdb</a> is a persistent key value store focused on performance. Despite its terse functionality set (put/get/range get and prefix get) is a powerful tool.</p>
+<p>One of the members of the original team that developed Rocksdb at facebook founded <a href="https://rockset.com">Rockset</a>. Rockset indexes automatically structured information (json, avro, etc..) on top of Rocksdb and allows to query that info using SQL.</p>
+<p>As many more today it&rsquo;s trying to market itselft as real-time analytics (who doesn&rsquo;t). It&rsquo;s really easy to use: just point your instance to a Kafka topic (there are many more available sources) and that&rsquo;s it. Rockset will autodiscover the schema and index your data. You can provide simple transformations on ingestion.</p>
+<p>Underneath rocksdb will provide the speed. Any query that hit the sweet spots of rocksdb (query by key, prefix search, etc..) will work well. Aside from there you will probably need some tweaking.</p>
+<p>In my use cases, Rockset lacks the ability to build real-time pipelines, incremental materialized views, etc&hellip; But if you are planning to build a Kafka Streams topology just to index an business entity, Rockset could spare you the effort (not that much anyway). If you are going to build a business entity from a few CDC streams in real time, I&rsquo;ll stick to other solutions.</p>
+
+	</div>
 </div>
-</div>    
     </div>
 </body>
 

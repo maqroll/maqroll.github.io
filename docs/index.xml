@@ -6,7 +6,17 @@
     <description>Recent content in Works - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rockset</title>
+      <link>https://maqroll.github.io/notes/post-20220710/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20220710/</guid>
+      <description>If you do stateful processing in Kafka Streams, you have already heard of Rocksdb. Rocksdb is a persistent key value store focused on performance. Despite its terse functionality set (put/get/range get and prefix get) is a powerful tool.
+One of the members of the original team that developed Rocksdb at facebook founded Rockset. Rockset indexes automatically structured information (json, avro, etc..) on top of Rocksdb and allows to query that info using SQL.</description>
+    </item>
+    
     <item>
       <title>InMemoryKeyValueStore without serialization/deserialization</title>
       <link>https://maqroll.github.io/notes/post-20220124/</link>
