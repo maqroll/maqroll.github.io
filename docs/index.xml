@@ -6,7 +6,17 @@
     <description>Recent content in Works - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processing Kafka in Vert.x with control flow</title>
+      <link>https://maqroll.github.io/notes/post-20220917/</link>
+      <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20220917/</guid>
+      <description>When you read asynchronously from Kafka in Vert.x (subscribing to a KafkaConsumer) ingestion rate it&amp;rsquo;s capped basically by the Kafka broker and the network bandwidth (take this as a simplistic statement). What I really mean it&amp;rsquo;s that this setup can achieve really high ingestion rates without much effort.
+If you opt to process those messages synchronously (providing that you have a KafkaConsumer per partition) your performance will be roughly that of Kafka Streams.</description>
+    </item>
+    
     <item>
       <title>Rockset</title>
       <link>https://maqroll.github.io/notes/post-20220710/</link>

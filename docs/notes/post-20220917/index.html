@@ -9,7 +9,7 @@
             helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
             sans-serif}body{margin:0 auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:#000;text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:#333}p,ul{margin:1rem 0}ul ul{margin:0}iframe{border:0}.small,small{font-size:14px}body,h1 a{color:#111}h1,h2{margin-bottom:.5rem;line-height:1.25;font-weight:600}h1{font-size:32px;letter-spacing:.004em}h2{font-size:1.5rem;letter-spacing:.009em}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad2y{padding-top:20px;padding-bottom:20px}@media screen and (max-width:640px){.limiter{width:auto}}@media screen and (min-width:640px){.nu a{text-decoration:none}.nu a:hover{text-decoration:underline}}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid #000;padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:40px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.s{color:#d01040}.writing time{padding-right: .25em;color: #333;font-variant-numeric: tabular-nums;letter-spacing: -.012em;white-space: pre;}.writing {display: grid;grid-column-gap: 5px;grid-row-gap: 5px;grid-template-columns: 1fr min-content;}
     </style>
-    <title>Notes - loteroc@gmail.com - loteroc@gmail.com</title>
+    <title>Processing Kafka in Vert.x with control flow - loteroc@gmail.com</title>
     <link href=https://maqroll.github.io/works/bepp/index.html rel=canonical>
 </head>
 
@@ -27,40 +27,18 @@
             </div>
         </nav>
 <div class="pad2y limiter content">
-	<div class="writing nu">
-   
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220917/">Processing Kafka in Vert.x with control flow</a>
-        </div>
-        <time>2022-09-17</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220710/">Rockset</a>
-        </div>
-        <time>2022-06-10</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20220124/">InMemoryKeyValueStore without serialization/deserialization</a>
-        </div>
-        <time>2022-01-24</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211104/">Hacking Kafka Connect</a>
-        </div>
-        <time>2021-11-04</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211027/">Nice to meet you, RandomBeans!</a>
-        </div>
-        <time>2021-10-27</time>
-    
-        <div>
-            <a href="https://maqroll.github.io/notes/post-20211024/">Nice to meet you, Vert.x!</a>
-        </div>
-        <time>2021-10-24</time>
-    
+	<h1>Processing Kafka in Vert.x with control flow</h1>
+	<div class="body">
+		<p>When you read asynchronously from Kafka in <a href="https://vertx.io">Vert.x</a> (subscribing to a KafkaConsumer) ingestion rate it&rsquo;s capped basically by the Kafka broker and the network bandwidth (take this as a simplistic statement). What I really mean it&rsquo;s that this setup can achieve really high ingestion rates without much effort.</p>
+<p>If you opt to process those messages synchronously (providing that you have a KafkaConsumer per partition) your performance will be roughly that of <a href="https://kafka.apache.org/documentation/streams/">Kafka Streams</a>.</p>
+<p>But if you do it asynchronously (sending those messages to the event bus and setting up a pipeline to process them in parallel) your processing performance can be a lot higher. <a href="https://materialize.com/">Materialize</a> doesn&rsquo;t use Java nor Vert.x but its processing model will be quite similar to that setup. Usually Kafka processing parallelism is done just at the partition level (always will be like that at the broker side).</p>
+<p>BTW would be really lovely to have a &ldquo;parallel Kafka Streams&rdquo; able to process in parallel even from the same partition while keeping the great expresiveness and simplicity.</p>
+<p>You start wondering  if you could read X millions messages per second from Kafka and after a while you begin wondering how can you handle that ingestion rate (in most cases if your messages doesn&rsquo;t start piling up in front of your backend is the GC that cloggs up).</p>
+<p>Then I usually setup a WriteStream proxy (with a Pump) that uses event bus metrics (`messages.pending) to flag the write queue full.</p>
+<p>I intentionally keep this notes as code-free as I can.</p>
+
+	</div>
 </div>
-</div>    
     </div>
 </body>
 
