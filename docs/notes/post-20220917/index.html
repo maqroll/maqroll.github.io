@@ -34,7 +34,7 @@
 <p>But if you do it asynchronously (sending those messages to the event bus and setting up a pipeline to process them in parallel) your processing performance can be a lot higher. <a href="https://materialize.com/">Materialize</a> doesn&rsquo;t use Java nor Vert.x but its processing model will be quite similar to that setup. Usually Kafka processing parallelism is done just at the partition level (always will be like that at the broker side).</p>
 <p>BTW would be really lovely to have a &ldquo;parallel Kafka Streams&rdquo; able to process in parallel even from the same partition while keeping the great expresiveness and simplicity.</p>
 <p>You start wondering  if you could read X millions messages per second from Kafka and after a while you begin wondering how can you handle that ingestion rate (in most cases if your messages doesn&rsquo;t start piling up in front of your backend is the GC that cloggs up).</p>
-<p>Then I usually setup a WriteStream proxy (with a Pump) that uses event bus metrics (<code>messages.pending</code>) to flag the write queue full.</p>
+<p>Then I usually setup a WriteStream proxy (with a <a href="https://vertx.io/docs/apidocs/io/vertx/reactivex/core/streams/Pump.html">Pump</a>) that uses event bus metrics (`messages.pending) to flag the write queue full.</p>
 <p>I intentionally keep this notes as code-free as I can.</p>
 
 	</div>
