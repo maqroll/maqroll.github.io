@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://maqroll.github.io/notes/</loc>
-    <lastmod>2022-09-17T00:00:00+00:00</lastmod>
+    <loc>https://maqroll.github.io/notes/post-20220922/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://maqroll.github.io/notes/post-20220917/</loc>
-    <lastmod>2022-09-17T00:00:00+00:00</lastmod>
+    <loc>https://maqroll.github.io/notes/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://maqroll.github.io/</loc>
+    <lastmod>2022-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://maqroll.github.io/notes/post-20220917/</loc>
     <lastmod>2022-09-17T00:00:00+00:00</lastmod>
   </url>
   

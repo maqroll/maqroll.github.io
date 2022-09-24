@@ -6,7 +6,20 @@
     <description>Recent content in Works - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KStreams remove member tool</title>
+      <link>https://maqroll.github.io/notes/post-20220922/</link>
+      <pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20220922/</guid>
+      <description>KIP-345 introduced static membership.
+In future works section it&amp;rsquo;s discussed the convenience of adding a new tool to remove instances from the group. Static membership doesn&amp;rsquo;t remove a member from the group until session timeout expires (usually a long time).
+It&amp;rsquo;s been a while since static membership is around but that tool never made it.
+We miss it so many times that we set up a quick solution.
+Help option will show you</description>
+    </item>
+    
     <item>
       <title>Processing Kafka in Vert.x with control flow</title>
       <link>https://maqroll.github.io/notes/post-20220917/</link>
