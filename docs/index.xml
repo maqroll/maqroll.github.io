@@ -6,7 +6,19 @@
     <description>Recent content in Works - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flink tips</title>
+      <link>https://maqroll.github.io/notes/post-20230714/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20230714/</guid>
+      <description>Not recent but quite helpful. If you are planning to use Flink or even if you already use it in production this post is worth the time.
+Points 2 and 7 are specially relevant.
+Kryo serialization looks like a great solution initially and usually becomes a nightmare in the long term.
+Rocksdb is a great piece of engineering. Going deeper into its multiple options and parameters is worth it at least and mandatory in many cases.</description>
+    </item>
+    
     <item>
       <title>KStreams remove member tool</title>
       <link>https://maqroll.github.io/notes/post-20220922/</link>
