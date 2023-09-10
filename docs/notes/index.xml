@@ -6,7 +6,17 @@
     <description>Recent content in Notes - loteroc@gmail.com on maqroll personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://maqroll.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lauterbrunnen</title>
+      <link>https://maqroll.github.io/notes/post-20230907/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://maqroll.github.io/notes/post-20230907/</guid>
+      <description>If you use Kafka to connect your microservices, sooner or later you start thinking about how to ensure that your data (stored in some database) and your events (the ones you publish in Kafka to notify anyone else about your data changes) tell the same story.
+Recently I&amp;rsquo;ve been talking to someone that faced this problem. Instead of going through the different alternatives (this article is a nice reference) I&amp;rsquo;ll try to recap the key points (in my experience).</description>
+    </item>
+    
     <item>
       <title>Flink tips</title>
       <link>https://maqroll.github.io/notes/post-20230714/</link>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <style>
+        :root{--mono-font: San Francisco Mono, Monaco, "Consolas", "Lucida Console",
+            "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;--sans-font: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+            helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+            sans-serif}body{margin:0 auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.6;font-size:1rem;font-family:var(--sans-font)}.only-print{display:none}a{color:#000;text-decoration-skip-ink:auto;text-decoration:underline}a:visited{color:#333}p,ul{margin:1rem 0}ul ul{margin:0}iframe{border:0}.small,small{font-size:14px}body,h1 a{color:#111}h1,h2{margin-bottom:.5rem;line-height:1.25;font-weight:600}h1{font-size:32px;letter-spacing:.004em}h2{font-size:1.5rem;letter-spacing:.009em}.limiter{max-width:640px;padding-left:20px;padding-right:20px;margin-left:auto;margin-right:auto}.pad2y{padding-top:20px;padding-bottom:20px}@media screen and (max-width:640px){.limiter{width:auto}}@media screen and (min-width:640px){.nu a{text-decoration:none}.nu a:hover{text-decoration:underline}}@media screen and (max-width:1024px){.header-wrap{border-bottom:1px solid #000;padding-bottom:20px}}@media screen and (min-width:1025px){.header{position:absolute;top:40px;right:50%;margin-right:340px!important;letter-spacing:-.009em}.content h1:first-child{margin-top:0}}@media print{.no-print{display:none}.only-print{display:block}body{margin:0}.limiter{max-width:100%!important;margin:0!important;padding:0!important}}.s{color:#d01040}.writing time{padding-right: .25em;color: #333;font-variant-numeric: tabular-nums;letter-spacing: -.012em;white-space: pre;}.writing {display: grid;grid-column-gap: 5px;grid-row-gap: 5px;grid-template-columns: 1fr min-content;}
+    </style>
+    <title>Lauterbrunnen - loteroc@gmail.com</title>
+    <link href=https://maqroll.github.io/works/bepp/index.html rel=canonical>
+</head>
+
+<body>
+    
+    <div class=pad2y style=position:relative>
+        <nav class=header-wrap>
+            <div class="header nu limiter no-print">
+                <h1 style="line-height:1.6;font-size:1rem;margin:0 0 0.25em 0;">loteroc@gmail.com</h1>
+                <ul style=list-style:none;padding:0;margin:0;>
+                    
+                    <li><a href=/>Works</a></li>
+                    <li><a href=/notes>Notes</a>⇠</li>
+                </ul>
+            </div>
+        </nav>
+<div class="pad2y limiter content">
+	<h1>Lauterbrunnen</h1>
+	<div class="body">
+		<p>If you use Kafka to connect your microservices, sooner or later you start thinking about how to ensure that <strong>your data</strong> (stored in some database) and <strong>your events</strong> (the ones you publish in Kafka to notify anyone else about your data changes) tell the same story.</p>
+<p>Recently I&rsquo;ve been talking to someone that faced this problem. Instead of going through the different alternatives (this <a href="https://blog.devgenius.io/transactional-integration-kafka-with-database-7eb5fc270bdc">article</a> is a nice reference) I&rsquo;ll try to recap the key points (in my experience).</p>
+<ul>
+<li>
+<p>Use <strong><a href="https://microservices.io/patterns/data/transactional-outbox.html">transactional outbox</a> pattern</strong>. There are many different ways to integrate a non-transactional resource (like Kafka) into a transaction but I wouldn&rsquo;t go that way because &hellip;</p>
+</li>
+<li>
+<p>It&rsquo;s not easy to get <strong>strict</strong> ordering in a performant way from the outbox table. Think of a SORT BY criteria that reflects transaction order (you get the rows in the same order that you&rsquo;ll get those INSERTs if inspecting the transactional log). I couldn&rsquo;t think of any but inspecting the transactional log. So &hellip;.</p>
+</li>
+<li>
+<p><strong>Don&rsquo;t extract your events through SQL</strong> (i.e. <a href="https://docs.confluent.io/kafka-connectors/jdbc/current/index.html">Kafka JDBC Connector</a>).</p>
+</li>
+<li>
+<p>Prefer the <strong>transactional log</strong> (or equivalent). If your database is supported, you can use an out-of-the-box solution like <a href="https://debezium.io/">Debezium</a>. In MySQL (or MariaDB) you can leverage <a href="https://mariadb.com/kb/en/blackhole/">blackhole</a> storage so that you don&rsquo;t need to take care of cleaning up your outbox table.</p>
+</li>
+<li>
+<p>Don&rsquo;t fight <strong>duplicates</strong>. Idempotency and partial ordering are your friends!</p>
+</li>
+<li>
+<p>As we are going to consume it through the <strong>transactional log</strong> you can&rsquo;t use a complex relational model with related tables. Just one table (per use case). That&rsquo;s why you should keep your business model and your outbox tables separated.</p>
+</li>
+<li>
+<p><strong>How should you store your data in the outbox table?</strong> Although there&rsquo;s only one table you may need to store complex data with relations 1-n (think of an order with many order lines). Relational model (with just one table) is not best suited for the task. Abuse the relational model and encode the info in one column (json, avro, etc&hellip;). <em>You can just store the event in exactly the same format (binary compatible) that you&rsquo;ll use to push to Kafka so that your CDC layer doesn&rsquo;t have to do any transformation</em>.</p>
+</li>
+</ul>
+
+	</div>
+</div>
+    </div>
+</body>
+
+</html>
