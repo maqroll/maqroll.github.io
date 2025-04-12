@@ -31,15 +31,15 @@
         .setOnHoverPathToMain()
     
       
-      const f3EditTree = f3Chart.editTree()
-        .fixed(true)
-        .setFields(["first name","last name","birthday","avatar"])
-        .setEditFirst(true)
+      //const f3EditTree = f3Chart.editTree()
+      //  .fixed(true)
+      //  .setFields(["first name","last name","birthday","avatar"])
+      //  .setEditFirst(true)
       
-      f3EditTree.setEdit()
+      //f3EditTree.setEdit()
       
       f3Card.setOnCardClick((e, d) => {
-        f3EditTree.open(d)
+        //f3EditTree.open(d)
         if (f3EditTree.isAddingRelative()) return
         f3Card.onCardClickDefault(e, d)
       })
@@ -52,7 +52,6 @@
     
     function data() {
       return [
-[
   {
     "id": "0",
     "rels": {
@@ -1574,7 +1573,6 @@
       "children": []
     }
   }
-]
       ]
     }
 
