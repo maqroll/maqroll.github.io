@@ -52,17 +52,1529 @@
     
     function data() {
       return [
-        {
-          "id": "0",
-          "rels": {},
-          "data": {
-            "first name": "Name",
-            "last name": "Surname",
-            "birthday": 1970,
-            "avatar": "https://static8.depositphotos.com/1009634/988/v/950/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg",
-            "gender": "M"
-          }
-        }
+[
+  {
+    "id": "0",
+    "rels": {
+      "father": "c64e2fe1-d17a-4373-842e-95cc53484a6a",
+      "mother": "37707616-9e53-42dc-8748-11613ba001ca"
+    },
+    "data": {
+      "first name": "Felix",
+      "last name": "",
+      "birthday": "",
+      "avatar": "",
+      "gender": "M"
+    }
+  },
+  {
+    "id": "c64e2fe1-d17a-4373-842e-95cc53484a6a",
+    "data": {
+      "gender": "M",
+      "first name": "Luis",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "children": [
+        "0"
+      ],
+      "spouses": [
+        "37707616-9e53-42dc-8748-11613ba001ca"
+      ]
+    }
+  },
+  {
+    "id": "37707616-9e53-42dc-8748-11613ba001ca",
+    "data": {
+      "gender": "F",
+      "first name": "Ana",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "children": [
+        "0"
+      ],
+      "spouses": [
+        "c64e2fe1-d17a-4373-842e-95cc53484a6a"
+      ],
+      "father": "612cd5cb-8944-4b28-8c70-faaa4c69bbcc",
+      "mother": "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76"
+    }
+  },
+  {
+    "id": "612cd5cb-8944-4b28-8c70-faaa4c69bbcc",
+    "data": {
+      "gender": "M",
+      "first name": "Gumersindo",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "children": [
+        "37707616-9e53-42dc-8748-11613ba001ca",
+        "d5901ddf-cac7-442c-a29f-ca7b803e9a6c",
+        "fcf94a44-55de-420e-8830-cb702a756497"
+      ],
+      "spouses": [
+        "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76"
+      ]
+    }
+  },
+  {
+    "id": "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76",
+    "data": {
+      "gender": "F",
+      "first name": "Manuela",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "children": [
+        "37707616-9e53-42dc-8748-11613ba001ca",
+        "d5901ddf-cac7-442c-a29f-ca7b803e9a6c",
+        "fcf94a44-55de-420e-8830-cb702a756497"
+      ],
+      "spouses": [
+        "612cd5cb-8944-4b28-8c70-faaa4c69bbcc"
+      ],
+      "father": "518492a3-1e1d-4560-88d5-4e0b0321a506",
+      "mother": "df77189c-f49e-433d-8132-308d1bcd5340"
+    }
+  },
+  {
+    "id": "d5901ddf-cac7-442c-a29f-ca7b803e9a6c",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Ramón",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "father": "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76",
+      "mother": "612cd5cb-8944-4b28-8c70-faaa4c69bbcc",
+      "spouses": [
+        "c930f94c-1d80-4ec6-a52b-5fbfa01901a1"
+      ],
+      "children": [
+        "4227ae9e-74d9-47a1-a393-55b7b8b1c72c"
+      ]
+    }
+  },
+  {
+    "id": "fcf94a44-55de-420e-8830-cb702a756497",
+    "data": {
+      "gender": "F",
+      "first name": "Silvia",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "father": "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76",
+      "mother": "612cd5cb-8944-4b28-8c70-faaa4c69bbcc",
+      "spouses": [
+        "53ff37a7-f257-4e74-ad8e-87c823551024"
+      ]
+    }
+  },
+  {
+    "id": "c930f94c-1d80-4ec6-a52b-5fbfa01901a1",
+    "data": {
+      "gender": "F",
+      "first name": "Loli",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "spouses": [
+        "d5901ddf-cac7-442c-a29f-ca7b803e9a6c"
+      ],
+      "children": [
+        "4227ae9e-74d9-47a1-a393-55b7b8b1c72c"
+      ]
+    }
+  },
+  {
+    "id": "4227ae9e-74d9-47a1-a393-55b7b8b1c72c",
+    "data": {
+      "gender": "F",
+      "first name": "Jessica",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "father": "d5901ddf-cac7-442c-a29f-ca7b803e9a6c",
+      "mother": "c930f94c-1d80-4ec6-a52b-5fbfa01901a1"
+    }
+  },
+  {
+    "id": "53ff37a7-f257-4e74-ad8e-87c823551024",
+    "data": {
+      "gender": "M",
+      "first name": "Israel",
+      "last name": "",
+      "birthday": "",
+      "avatar": ""
+    },
+    "rels": {
+      "spouses": [
+        "fcf94a44-55de-420e-8830-cb702a756497"
+      ],
+      "children": []
+    }
+  },
+  {
+    "id": "518492a3-1e1d-4560-88d5-4e0b0321a506",
+    "data": {
+      "gender": "M",
+      "first name": "Jesús",
+      "last name": "Suarez Botana"
+    },
+    "rels": {
+      "children": [
+        "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76",
+        "1eafeed3-7ad0-4a8e-946b-fbed12c505d1",
+        "77fe27ac-50d4-4d97-b72e-d55b57c35e4e"
+      ],
+      "spouses": [
+        "df77189c-f49e-433d-8132-308d1bcd5340"
+      ],
+      "mother": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "father": "31669aca-a76a-45ea-b257-b13171a3bcaa"
+    }
+  },
+  {
+    "id": "df77189c-f49e-433d-8132-308d1bcd5340",
+    "data": {
+      "gender": "F",
+      "first name": "María",
+      "last name": "Quindimil del Río"
+    },
+    "rels": {
+      "children": [
+        "1891bef7-c65e-4df0-9aff-ea8ffbbd6b76",
+        "1eafeed3-7ad0-4a8e-946b-fbed12c505d1",
+        "77fe27ac-50d4-4d97-b72e-d55b57c35e4e"
+      ],
+      "spouses": [
+        "518492a3-1e1d-4560-88d5-4e0b0321a506"
+      ]
+    }
+  },
+  {
+    "id": "1eafeed3-7ad0-4a8e-946b-fbed12c505d1",
+    "data": {
+      "gender": "M",
+      "first name": "Ramona",
+      "last name": ""
+    },
+    "rels": {
+      "father": "df77189c-f49e-433d-8132-308d1bcd5340",
+      "mother": "518492a3-1e1d-4560-88d5-4e0b0321a506"
+    }
+  },
+  {
+    "id": "77fe27ac-50d4-4d97-b72e-d55b57c35e4e",
+    "data": {
+      "gender": "F",
+      "first name": "Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "df77189c-f49e-433d-8132-308d1bcd5340",
+      "mother": "518492a3-1e1d-4560-88d5-4e0b0321a506",
+      "spouses": [
+        "b4160a21-d118-4b00-9e89-f5072de10b17"
+      ],
+      "children": [
+        "9beda709-7556-4c1c-8778-8e77a62310c8",
+        "dcdec2cd-5dc1-4358-ad25-d7f72650dab8"
+      ]
+    }
+  },
+  {
+    "id": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+    "data": {
+      "gender": "F",
+      "first name": "Josefa",
+      "last name": "Botana Joulloso"
+    },
+    "rels": {
+      "children": [
+        "518492a3-1e1d-4560-88d5-4e0b0321a506",
+        "8fca8813-5eb3-4701-a207-0d1f6eb07067",
+        "b781072f-09d4-46f6-bd0a-c1891512772d",
+        "62dbb14f-2064-4597-902f-e919bd28ae56",
+        "79181792-792c-4e0c-b78b-49cec2e29e5e",
+        "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+        "efbe2310-24d5-420e-9bbb-f041fc785df2",
+        "b7d8053c-3480-4ef6-a727-78d0dc37640a"
+      ],
+      "spouses": [
+        "31669aca-a76a-45ea-b257-b13171a3bcaa"
+      ]
+    }
+  },
+  {
+    "id": "8fca8813-5eb3-4701-a207-0d1f6eb07067",
+    "data": {
+      "gender": "M",
+      "first name": "Jose",
+      "last name": ""
+    },
+    "rels": {
+      "mother": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "father": "31669aca-a76a-45ea-b257-b13171a3bcaa"
+    }
+  },
+  {
+    "id": "b781072f-09d4-46f6-bd0a-c1891512772d",
+    "data": {
+      "gender": "M",
+      "first name": "Felipe",
+      "last name": "Suarez Botana"
+    },
+    "rels": {
+      "mother": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "children": [
+        "e2903b4e-b8b7-4e88-a665-765ac67529c9"
+      ],
+      "spouses": [
+        "f82f3b9d-f58b-4fac-b832-493895c73a45"
+      ],
+      "father": "31669aca-a76a-45ea-b257-b13171a3bcaa"
+    }
+  },
+  {
+    "id": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": "Suarez Botana"
+    },
+    "rels": {
+      "father": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "spouses": [
+        "8fd5179a-f8bb-4cef-9178-fd830b811818"
+      ],
+      "children": [
+        "29f55c98-6ca1-4065-a1d3-4f4608d4af09",
+        "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+        "c76ef2d2-68aa-44fc-b454-8ca44cc876ab",
+        "da42d45f-4216-41d7-af0f-2b24dfdb832b",
+        "56ddf135-4c85-453a-a0f9-767f551f4542"
+      ]
+    }
+  },
+  {
+    "id": "efbe2310-24d5-420e-9bbb-f041fc785df2",
+    "data": {
+      "gender": "M",
+      "first name": "Vicente",
+      "last name": "Suarez Botana"
+    },
+    "rels": {
+      "father": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "spouses": [
+        "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a"
+      ],
+      "children": [
+        "76fae54a-e2cd-4486-a090-768745e993a4",
+        "ed9debc0-b7b3-4366-9947-97781d17afe5",
+        "f12533a2-d116-41a6-8675-120aeccdabc8",
+        "051512b3-e478-41a3-a259-2dc0266ef544",
+        "372f4077-4f0d-4927-9c7d-181bece0d817"
+      ]
+    }
+  },
+  {
+    "id": "b7d8053c-3480-4ef6-a727-78d0dc37640a",
+    "data": {
+      "gender": "F",
+      "first name": "Manuela",
+      "last name": "Suarez Botana"
+    },
+    "rels": {
+      "father": "58f784a0-df7e-4a0c-bfd4-550c11c0d130",
+      "children": [
+        "9f9567e2-bf47-42a6-978e-90dd16674bd0"
+      ],
+      "spouses": []
+    }
+  },
+  {
+    "id": "9f9567e2-bf47-42a6-978e-90dd16674bd0",
+    "data": {
+      "gender": "M",
+      "first name": "Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "b7d8053c-3480-4ef6-a727-78d0dc37640a"
+    }
+  },
+  {
+    "id": "e2903b4e-b8b7-4e88-a665-765ac67529c9",
+    "data": {
+      "gender": "F",
+      "first name": "Mercedes",
+      "last name": ""
+    },
+    "rels": {
+      "father": "b781072f-09d4-46f6-bd0a-c1891512772d",
+      "children": [
+        "92fbcc86-2de6-4dd4-8ce5-91f9dfb3cd6b",
+        "e9a3e21f-4d2a-4a67-b55b-56ee77cfe94f",
+        "47814f1e-1d11-4221-9000-e49c09cbe11c"
+      ],
+      "spouses": [
+        "182f06b5-9326-47d3-b6be-19e34ef758b0"
+      ],
+      "mother": "f82f3b9d-f58b-4fac-b832-493895c73a45"
+    }
+  },
+  {
+    "id": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+    "data": {
+      "gender": "F",
+      "first name": "Maria",
+      "last name": "Rodriguez"
+    },
+    "rels": {
+      "spouses": [
+        "a9fa006c-813d-44b6-8ad2-4189c30904ce"
+      ],
+      "children": [
+        "29f55c98-6ca1-4065-a1d3-4f4608d4af09",
+        "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+        "c76ef2d2-68aa-44fc-b454-8ca44cc876ab",
+        "da42d45f-4216-41d7-af0f-2b24dfdb832b",
+        "56ddf135-4c85-453a-a0f9-767f551f4542"
+      ]
+    }
+  },
+  {
+    "id": "29f55c98-6ca1-4065-a1d3-4f4608d4af09",
+    "data": {
+      "gender": "M",
+      "first name": "Felipe",
+      "last name": ""
+    },
+    "rels": {
+      "father": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+      "mother": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+      "spouses": [
+        "8422e2d2-62c8-45c7-a642-561e14c75c51"
+      ],
+      "children": [
+        "ee669c36-cf20-485f-a561-2a6b65a6e190",
+        "9aa26f1e-4289-4e10-80ed-5393424bef18"
+      ]
+    }
+  },
+  {
+    "id": "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+    "data": {
+      "gender": "M",
+      "first name": "Ramiro",
+      "last name": ""
+    },
+    "rels": {
+      "father": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+      "mother": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+      "spouses": [
+        "5378fa8e-ebe0-4891-b926-b5488eca9e71"
+      ],
+      "children": [
+        "0b0053a4-f0ab-4bf7-86f5-65e8bc328d63",
+        "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+        "41824024-68cd-43c2-a708-08a08e49b0f9"
+      ]
+    }
+  },
+  {
+    "id": "c76ef2d2-68aa-44fc-b454-8ca44cc876ab",
+    "data": {
+      "gender": "M",
+      "first name": "Lourenzo",
+      "last name": ""
+    },
+    "rels": {
+      "father": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+      "mother": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+      "spouses": [
+        "53ac41f3-9aab-46f3-a597-85f724a73c3d"
+      ],
+      "children": [
+        "11ed4126-2097-4a4c-9b40-903693baaa64",
+        "61ed3184-6bf5-4a43-97ae-383038e680df"
+      ]
+    }
+  },
+  {
+    "id": "da42d45f-4216-41d7-af0f-2b24dfdb832b",
+    "data": {
+      "gender": "M",
+      "first name": "Xacobe",
+      "last name": ""
+    },
+    "rels": {
+      "father": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+      "mother": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+      "spouses": [
+        "e69f5a06-cfeb-4f42-b282-9ba19b5eb9b0"
+      ],
+      "children": [
+        "9dd0bca6-ee93-4187-8b6a-26f3a357935b"
+      ]
+    }
+  },
+  {
+    "id": "56ddf135-4c85-453a-a0f9-767f551f4542",
+    "data": {
+      "gender": "M",
+      "first name": "Jesús",
+      "last name": ""
+    },
+    "rels": {
+      "father": "a9fa006c-813d-44b6-8ad2-4189c30904ce",
+      "mother": "8fd5179a-f8bb-4cef-9178-fd830b811818",
+      "spouses": [
+        "fd4699d7-f52c-4037-8594-ac782e573f51"
+      ],
+      "children": [
+        "51011b61-9d71-4e5a-a3d3-45e462c06bf1",
+        "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727"
+      ]
+    }
+  },
+  {
+    "id": "31669aca-a76a-45ea-b257-b13171a3bcaa",
+    "data": {
+      "gender": "M",
+      "first name": "Xacobe",
+      "last name": "Suarez Sanchez"
+    },
+    "rels": {
+      "spouses": [
+        "58f784a0-df7e-4a0c-bfd4-550c11c0d130"
+      ],
+      "children": [
+        "518492a3-1e1d-4560-88d5-4e0b0321a506",
+        "8fca8813-5eb3-4701-a207-0d1f6eb07067",
+        "b781072f-09d4-46f6-bd0a-c1891512772d",
+        "62dbb14f-2064-4597-902f-e919bd28ae56",
+        "79181792-792c-4e0c-b78b-49cec2e29e5e"
+      ],
+      "father": "fa8e5225-058c-4595-8619-ac98f559a43f",
+      "mother": "a067e038-c7c1-4df4-8568-744bd2e95397"
+    }
+  },
+  {
+    "id": "92fbcc86-2de6-4dd4-8ce5-91f9dfb3cd6b",
+    "data": {
+      "gender": "M",
+      "first name": "?",
+      "last name": ""
+    },
+    "rels": {
+      "father": "e2903b4e-b8b7-4e88-a665-765ac67529c9",
+      "mother": "182f06b5-9326-47d3-b6be-19e34ef758b0"
+    }
+  },
+  {
+    "id": "e9a3e21f-4d2a-4a67-b55b-56ee77cfe94f",
+    "data": {
+      "gender": "F",
+      "first name": "?",
+      "last name": ""
+    },
+    "rels": {
+      "father": "e2903b4e-b8b7-4e88-a665-765ac67529c9",
+      "mother": "182f06b5-9326-47d3-b6be-19e34ef758b0"
+    }
+  },
+  {
+    "id": "47814f1e-1d11-4221-9000-e49c09cbe11c",
+    "data": {
+      "gender": "M",
+      "first name": "?",
+      "last name": ""
+    },
+    "rels": {
+      "father": "e2903b4e-b8b7-4e88-a665-765ac67529c9",
+      "mother": "182f06b5-9326-47d3-b6be-19e34ef758b0"
+    }
+  },
+  {
+    "id": "182f06b5-9326-47d3-b6be-19e34ef758b0",
+    "data": {
+      "gender": "M",
+      "first name": "",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "e2903b4e-b8b7-4e88-a665-765ac67529c9"
+      ],
+      "children": [
+        "92fbcc86-2de6-4dd4-8ce5-91f9dfb3cd6b",
+        "e9a3e21f-4d2a-4a67-b55b-56ee77cfe94f",
+        "47814f1e-1d11-4221-9000-e49c09cbe11c"
+      ]
+    }
+  },
+  {
+    "id": "8422e2d2-62c8-45c7-a642-561e14c75c51",
+    "data": {
+      "gender": "F",
+      "first name": "Dosinda",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "29f55c98-6ca1-4065-a1d3-4f4608d4af09"
+      ],
+      "children": [
+        "ee669c36-cf20-485f-a561-2a6b65a6e190",
+        "9aa26f1e-4289-4e10-80ed-5393424bef18"
+      ]
+    }
+  },
+  {
+    "id": "ee669c36-cf20-485f-a561-2a6b65a6e190",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "29f55c98-6ca1-4065-a1d3-4f4608d4af09",
+      "mother": "8422e2d2-62c8-45c7-a642-561e14c75c51"
+    }
+  },
+  {
+    "id": "e69f5a06-cfeb-4f42-b282-9ba19b5eb9b0",
+    "data": {
+      "gender": "F",
+      "first name": "Soledad",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "da42d45f-4216-41d7-af0f-2b24dfdb832b"
+      ],
+      "children": [
+        "9dd0bca6-ee93-4187-8b6a-26f3a357935b"
+      ]
+    }
+  },
+  {
+    "id": "9dd0bca6-ee93-4187-8b6a-26f3a357935b",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "da42d45f-4216-41d7-af0f-2b24dfdb832b",
+      "mother": "e69f5a06-cfeb-4f42-b282-9ba19b5eb9b0",
+      "spouses": [
+        "4c541c7f-de86-4f6e-8b7d-c61a37b1fe6b"
+      ],
+      "children": [
+        "ec9f41fa-298d-4ab9-a9e2-6b3e12dbb766",
+        "8712c74a-6724-4e8e-918a-8d3047aa9af1"
+      ]
+    }
+  },
+  {
+    "id": "4c541c7f-de86-4f6e-8b7d-c61a37b1fe6b",
+    "data": {
+      "gender": "F",
+      "first name": "Margarita",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "9dd0bca6-ee93-4187-8b6a-26f3a357935b"
+      ],
+      "children": [
+        "ec9f41fa-298d-4ab9-a9e2-6b3e12dbb766",
+        "8712c74a-6724-4e8e-918a-8d3047aa9af1"
+      ]
+    }
+  },
+  {
+    "id": "ec9f41fa-298d-4ab9-a9e2-6b3e12dbb766",
+    "data": {
+      "gender": "F",
+      "first name": "Natalia",
+      "last name": ""
+    },
+    "rels": {
+      "father": "9dd0bca6-ee93-4187-8b6a-26f3a357935b",
+      "mother": "4c541c7f-de86-4f6e-8b7d-c61a37b1fe6b"
+    }
+  },
+  {
+    "id": "8712c74a-6724-4e8e-918a-8d3047aa9af1",
+    "data": {
+      "gender": "F",
+      "first name": "Maria",
+      "last name": ""
+    },
+    "rels": {
+      "father": "9dd0bca6-ee93-4187-8b6a-26f3a357935b",
+      "mother": "4c541c7f-de86-4f6e-8b7d-c61a37b1fe6b"
+    }
+  },
+  {
+    "id": "fd4699d7-f52c-4037-8594-ac782e573f51",
+    "data": {
+      "gender": "F",
+      "first name": "María",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "56ddf135-4c85-453a-a0f9-767f551f4542"
+      ],
+      "children": [
+        "51011b61-9d71-4e5a-a3d3-45e462c06bf1",
+        "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727"
+      ]
+    }
+  },
+  {
+    "id": "51011b61-9d71-4e5a-a3d3-45e462c06bf1",
+    "data": {
+      "gender": "F",
+      "first name": "Mari Carmen",
+      "last name": ""
+    },
+    "rels": {
+      "father": "56ddf135-4c85-453a-a0f9-767f551f4542",
+      "mother": "fd4699d7-f52c-4037-8594-ac782e573f51",
+      "spouses": [
+        "de119f66-ac53-43a6-b629-f2bd964bb8bd"
+      ]
+    }
+  },
+  {
+    "id": "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727",
+    "data": {
+      "gender": "F",
+      "first name": "María Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "56ddf135-4c85-453a-a0f9-767f551f4542",
+      "mother": "fd4699d7-f52c-4037-8594-ac782e573f51",
+      "children": [
+        "cb385b8a-4d29-43f4-b77c-f90ddac3ba4c",
+        "e5652b1d-2576-4dd8-8a56-d5727206ddfe"
+      ],
+      "spouses": [
+        "945376b3-2067-4a04-9956-82b0e39b63a1"
+      ]
+    }
+  },
+  {
+    "id": "cb385b8a-4d29-43f4-b77c-f90ddac3ba4c",
+    "data": {
+      "gender": "M",
+      "first name": "Cesar",
+      "last name": ""
+    },
+    "rels": {
+      "father": "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727",
+      "mother": "945376b3-2067-4a04-9956-82b0e39b63a1"
+    }
+  },
+  {
+    "id": "e5652b1d-2576-4dd8-8a56-d5727206ddfe",
+    "data": {
+      "gender": "F",
+      "first name": "Serena",
+      "last name": ""
+    },
+    "rels": {
+      "father": "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727",
+      "mother": "945376b3-2067-4a04-9956-82b0e39b63a1"
+    }
+  },
+  {
+    "id": "945376b3-2067-4a04-9956-82b0e39b63a1",
+    "data": {
+      "gender": "M",
+      "first name": "Suso",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "ee5c5ebb-523d-4fae-9ac4-f896d1dd9727"
+      ],
+      "children": [
+        "cb385b8a-4d29-43f4-b77c-f90ddac3ba4c",
+        "e5652b1d-2576-4dd8-8a56-d5727206ddfe"
+      ]
+    }
+  },
+  {
+    "id": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a",
+    "data": {
+      "gender": "F",
+      "first name": "Dolores",
+      "last name": "Rico"
+    },
+    "rels": {
+      "spouses": [
+        "efbe2310-24d5-420e-9bbb-f041fc785df2"
+      ],
+      "children": [
+        "76fae54a-e2cd-4486-a090-768745e993a4",
+        "ed9debc0-b7b3-4366-9947-97781d17afe5",
+        "f12533a2-d116-41a6-8675-120aeccdabc8",
+        "051512b3-e478-41a3-a259-2dc0266ef544",
+        "372f4077-4f0d-4927-9c7d-181bece0d817"
+      ]
+    }
+  },
+  {
+    "id": "76fae54a-e2cd-4486-a090-768745e993a4",
+    "data": {
+      "gender": "F",
+      "first name": "María",
+      "last name": ""
+    },
+    "rels": {
+      "father": "efbe2310-24d5-420e-9bbb-f041fc785df2",
+      "mother": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a"
+    }
+  },
+  {
+    "id": "ed9debc0-b7b3-4366-9947-97781d17afe5",
+    "data": {
+      "gender": "F",
+      "first name": "Elena",
+      "last name": ""
+    },
+    "rels": {
+      "father": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a",
+      "mother": "efbe2310-24d5-420e-9bbb-f041fc785df2"
+    }
+  },
+  {
+    "id": "f12533a2-d116-41a6-8675-120aeccdabc8",
+    "data": {
+      "gender": "F",
+      "first name": "Jesusa",
+      "last name": ""
+    },
+    "rels": {
+      "father": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a",
+      "mother": "efbe2310-24d5-420e-9bbb-f041fc785df2",
+      "spouses": [
+        "274745d2-a06f-433a-8d8e-c09930aba444"
+      ],
+      "children": [
+        "60827668-c51e-447d-8b0d-9b221c518ce8",
+        "2b3a9f63-c835-454e-b172-1dccaae6ca0a",
+        "c0730fd1-46b1-4a6e-b4bb-1e69fd9f8ed1"
+      ]
+    }
+  },
+  {
+    "id": "274745d2-a06f-433a-8d8e-c09930aba444",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "f12533a2-d116-41a6-8675-120aeccdabc8"
+      ],
+      "children": [
+        "60827668-c51e-447d-8b0d-9b221c518ce8",
+        "2b3a9f63-c835-454e-b172-1dccaae6ca0a",
+        "c0730fd1-46b1-4a6e-b4bb-1e69fd9f8ed1"
+      ]
+    }
+  },
+  {
+    "id": "60827668-c51e-447d-8b0d-9b221c518ce8",
+    "data": {
+      "gender": "F",
+      "first name": "Aurea",
+      "last name": ""
+    },
+    "rels": {
+      "father": "f12533a2-d116-41a6-8675-120aeccdabc8",
+      "mother": "274745d2-a06f-433a-8d8e-c09930aba444",
+      "spouses": [
+        "3916263b-0a21-46d0-9762-1a40c9f03128"
+      ],
+      "children": [
+        "ec314d6c-f207-4463-89f2-3d679a769690"
+      ]
+    }
+  },
+  {
+    "id": "3916263b-0a21-46d0-9762-1a40c9f03128",
+    "data": {
+      "gender": "M",
+      "first name": "Paco",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "60827668-c51e-447d-8b0d-9b221c518ce8"
+      ],
+      "children": [
+        "ec314d6c-f207-4463-89f2-3d679a769690"
+      ]
+    }
+  },
+  {
+    "id": "ec314d6c-f207-4463-89f2-3d679a769690",
+    "data": {
+      "gender": "F",
+      "first name": "Verónica",
+      "last name": ""
+    },
+    "rels": {
+      "father": "60827668-c51e-447d-8b0d-9b221c518ce8",
+      "mother": "3916263b-0a21-46d0-9762-1a40c9f03128",
+      "children": [
+        "fe30abb5-6546-433c-b197-dae940957151"
+      ],
+      "spouses": []
+    }
+  },
+  {
+    "id": "fe30abb5-6546-433c-b197-dae940957151",
+    "data": {
+      "gender": "F",
+      "first name": "Milagros",
+      "last name": ""
+    },
+    "rels": {
+      "father": "ec314d6c-f207-4463-89f2-3d679a769690"
+    }
+  },
+  {
+    "id": "2b3a9f63-c835-454e-b172-1dccaae6ca0a",
+    "data": {
+      "gender": "M",
+      "first name": "Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "274745d2-a06f-433a-8d8e-c09930aba444",
+      "mother": "f12533a2-d116-41a6-8675-120aeccdabc8"
+    }
+  },
+  {
+    "id": "c0730fd1-46b1-4a6e-b4bb-1e69fd9f8ed1",
+    "data": {
+      "gender": "M",
+      "first name": "Benigno",
+      "last name": ""
+    },
+    "rels": {
+      "father": "274745d2-a06f-433a-8d8e-c09930aba444",
+      "mother": "f12533a2-d116-41a6-8675-120aeccdabc8"
+    }
+  },
+  {
+    "id": "051512b3-e478-41a3-a259-2dc0266ef544",
+    "data": {
+      "gender": "F",
+      "first name": "Manuela",
+      "last name": ""
+    },
+    "rels": {
+      "father": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a",
+      "mother": "efbe2310-24d5-420e-9bbb-f041fc785df2"
+    }
+  },
+  {
+    "id": "372f4077-4f0d-4927-9c7d-181bece0d817",
+    "data": {
+      "gender": "M",
+      "first name": "Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "7f2dc318-74e3-4f9e-8d0e-3e7897d0436a",
+      "mother": "efbe2310-24d5-420e-9bbb-f041fc785df2"
+    }
+  },
+  {
+    "id": "b4160a21-d118-4b00-9e89-f5072de10b17",
+    "data": {
+      "gender": "F",
+      "first name": "Sofia",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "77fe27ac-50d4-4d97-b72e-d55b57c35e4e"
+      ],
+      "children": [
+        "9beda709-7556-4c1c-8778-8e77a62310c8",
+        "dcdec2cd-5dc1-4358-ad25-d7f72650dab8"
+      ]
+    }
+  },
+  {
+    "id": "9beda709-7556-4c1c-8778-8e77a62310c8",
+    "data": {
+      "gender": "F",
+      "first name": "Maria Jose",
+      "last name": ""
+    },
+    "rels": {
+      "father": "77fe27ac-50d4-4d97-b72e-d55b57c35e4e",
+      "mother": "b4160a21-d118-4b00-9e89-f5072de10b17",
+      "spouses": [
+        "bfbb7b7d-046c-4b44-9dfe-49346f003447"
+      ],
+      "children": [
+        "a047ec98-9294-4ee1-b65d-d61ef1677a60"
+      ]
+    }
+  },
+  {
+    "id": "dcdec2cd-5dc1-4358-ad25-d7f72650dab8",
+    "data": {
+      "gender": "F",
+      "first name": "Lucita",
+      "last name": ""
+    },
+    "rels": {
+      "father": "77fe27ac-50d4-4d97-b72e-d55b57c35e4e",
+      "mother": "b4160a21-d118-4b00-9e89-f5072de10b17",
+      "spouses": [
+        "62bf31ea-1a61-415e-80f8-88d284d88a6a"
+      ],
+      "children": [
+        "8c991a51-1aba-41a1-9954-df673fa9cfd2"
+      ]
+    }
+  },
+  {
+    "id": "bfbb7b7d-046c-4b44-9dfe-49346f003447",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "9beda709-7556-4c1c-8778-8e77a62310c8"
+      ],
+      "children": [
+        "a047ec98-9294-4ee1-b65d-d61ef1677a60"
+      ]
+    }
+  },
+  {
+    "id": "a047ec98-9294-4ee1-b65d-d61ef1677a60",
+    "data": {
+      "gender": "M",
+      "first name": "Oscar",
+      "last name": ""
+    },
+    "rels": {
+      "father": "9beda709-7556-4c1c-8778-8e77a62310c8",
+      "mother": "bfbb7b7d-046c-4b44-9dfe-49346f003447"
+    }
+  },
+  {
+    "id": "62bf31ea-1a61-415e-80f8-88d284d88a6a",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "dcdec2cd-5dc1-4358-ad25-d7f72650dab8"
+      ],
+      "children": [
+        "8c991a51-1aba-41a1-9954-df673fa9cfd2"
+      ]
+    }
+  },
+  {
+    "id": "8c991a51-1aba-41a1-9954-df673fa9cfd2",
+    "data": {
+      "gender": "F",
+      "first name": "Paula",
+      "last name": ""
+    },
+    "rels": {
+      "father": "dcdec2cd-5dc1-4358-ad25-d7f72650dab8",
+      "mother": "62bf31ea-1a61-415e-80f8-88d284d88a6a",
+      "spouses": [
+        "7e773667-224f-461a-85c5-72041bd62419"
+      ],
+      "children": [
+        "48449200-a146-4e86-ba9f-74cea5a1af9c"
+      ]
+    }
+  },
+  {
+    "id": "7e773667-224f-461a-85c5-72041bd62419",
+    "data": {
+      "gender": "M",
+      "first name": "Luis",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "8c991a51-1aba-41a1-9954-df673fa9cfd2"
+      ],
+      "children": [
+        "48449200-a146-4e86-ba9f-74cea5a1af9c"
+      ]
+    }
+  },
+  {
+    "id": "48449200-a146-4e86-ba9f-74cea5a1af9c",
+    "data": {
+      "gender": "M",
+      "first name": "Xoel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "8c991a51-1aba-41a1-9954-df673fa9cfd2",
+      "mother": "7e773667-224f-461a-85c5-72041bd62419"
+    }
+  },
+  {
+    "id": "f82f3b9d-f58b-4fac-b832-493895c73a45",
+    "data": {
+      "gender": "F",
+      "first name": "Maria Antonia",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "b781072f-09d4-46f6-bd0a-c1891512772d"
+      ],
+      "children": [
+        "e2903b4e-b8b7-4e88-a665-765ac67529c9"
+      ]
+    }
+  },
+  {
+    "id": "5378fa8e-ebe0-4891-b926-b5488eca9e71",
+    "data": {
+      "gender": "F",
+      "first name": "Carmen",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "6069bcc1-f890-4c3b-b379-4397ce8b8519"
+      ],
+      "children": [
+        "0b0053a4-f0ab-4bf7-86f5-65e8bc328d63",
+        "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+        "41824024-68cd-43c2-a708-08a08e49b0f9"
+      ]
+    }
+  },
+  {
+    "id": "0b0053a4-f0ab-4bf7-86f5-65e8bc328d63",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Lino",
+      "last name": ""
+    },
+    "rels": {
+      "father": "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+      "mother": "5378fa8e-ebe0-4891-b926-b5488eca9e71",
+      "spouses": [
+        "a9cb9dd8-ef9b-4eb8-b745-ee2b793876e9"
+      ]
+    }
+  },
+  {
+    "id": "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+    "data": {
+      "gender": "M",
+      "first name": "Felipe (Suiza)",
+      "last name": ""
+    },
+    "rels": {
+      "father": "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+      "mother": "5378fa8e-ebe0-4891-b926-b5488eca9e71",
+      "children": [
+        "a6b95ca3-a2df-4b2e-a50c-af4797e08fc8",
+        "74ca1b37-a704-4618-bf32-1f8809d8811d",
+        "8e798c74-f7e1-4fc7-a1ea-5d54af49a22b"
+      ],
+      "spouses": [
+        "11c7932b-c1ce-4180-a1f9-92c05df7af9f"
+      ]
+    }
+  },
+  {
+    "id": "41824024-68cd-43c2-a708-08a08e49b0f9",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "6069bcc1-f890-4c3b-b379-4397ce8b8519",
+      "mother": "5378fa8e-ebe0-4891-b926-b5488eca9e71"
+    }
+  },
+  {
+    "id": "de119f66-ac53-43a6-b629-f2bd964bb8bd",
+    "data": {
+      "gender": "M",
+      "first name": "Jorge",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "51011b61-9d71-4e5a-a3d3-45e462c06bf1"
+      ],
+      "children": []
+    }
+  },
+  {
+    "id": "fa8e5225-058c-4595-8619-ac98f559a43f",
+    "data": {
+      "gender": "M",
+      "first name": "Felipe",
+      "last name": "Suarez"
+    },
+    "rels": {
+      "children": [
+        "31669aca-a76a-45ea-b257-b13171a3bcaa",
+        "1cf2596f-6bbc-4366-8a72-07742dd43fac",
+        "6540549e-96b0-4cda-be33-c584479082f2",
+        "75e0b4b6-9aa8-4a37-865c-5c86c976bcd7"
+      ],
+      "spouses": [
+        "a067e038-c7c1-4df4-8568-744bd2e95397"
+      ]
+    }
+  },
+  {
+    "id": "a067e038-c7c1-4df4-8568-744bd2e95397",
+    "data": {
+      "gender": "F",
+      "first name": "Maria ",
+      "last name": "Sanchez"
+    },
+    "rels": {
+      "children": [
+        "31669aca-a76a-45ea-b257-b13171a3bcaa",
+        "1cf2596f-6bbc-4366-8a72-07742dd43fac",
+        "6540549e-96b0-4cda-be33-c584479082f2",
+        "75e0b4b6-9aa8-4a37-865c-5c86c976bcd7"
+      ],
+      "spouses": [
+        "fa8e5225-058c-4595-8619-ac98f559a43f"
+      ]
+    }
+  },
+  {
+    "id": "1cf2596f-6bbc-4366-8a72-07742dd43fac",
+    "data": {
+      "gender": "F",
+      "first name": "Vicenta",
+      "last name": ""
+    },
+    "rels": {
+      "father": "fa8e5225-058c-4595-8619-ac98f559a43f",
+      "mother": "a067e038-c7c1-4df4-8568-744bd2e95397"
+    }
+  },
+  {
+    "id": "6540549e-96b0-4cda-be33-c584479082f2",
+    "data": {
+      "gender": "F",
+      "first name": "Pepa",
+      "last name": ""
+    },
+    "rels": {
+      "father": "fa8e5225-058c-4595-8619-ac98f559a43f",
+      "mother": "a067e038-c7c1-4df4-8568-744bd2e95397"
+    }
+  },
+  {
+    "id": "75e0b4b6-9aa8-4a37-865c-5c86c976bcd7",
+    "data": {
+      "gender": "F",
+      "first name": "Maria",
+      "last name": ""
+    },
+    "rels": {
+      "father": "fa8e5225-058c-4595-8619-ac98f559a43f",
+      "mother": "a067e038-c7c1-4df4-8568-744bd2e95397"
+    }
+  },
+  {
+    "id": "62dbb14f-2064-4597-902f-e919bd28ae56",
+    "data": {
+      "gender": "M",
+      "first name": "Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "31669aca-a76a-45ea-b257-b13171a3bcaa",
+      "mother": "58f784a0-df7e-4a0c-bfd4-550c11c0d130"
+    }
+  },
+  {
+    "id": "79181792-792c-4e0c-b78b-49cec2e29e5e",
+    "data": {
+      "gender": "M",
+      "first name": "Vicente",
+      "last name": ""
+    },
+    "rels": {
+      "father": "31669aca-a76a-45ea-b257-b13171a3bcaa",
+      "mother": "58f784a0-df7e-4a0c-bfd4-550c11c0d130"
+    }
+  },
+  {
+    "id": "53ac41f3-9aab-46f3-a597-85f724a73c3d",
+    "data": {
+      "gender": "F",
+      "first name": "Maria",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "c76ef2d2-68aa-44fc-b454-8ca44cc876ab"
+      ],
+      "children": [
+        "11ed4126-2097-4a4c-9b40-903693baaa64",
+        "61ed3184-6bf5-4a43-97ae-383038e680df"
+      ]
+    }
+  },
+  {
+    "id": "11ed4126-2097-4a4c-9b40-903693baaa64",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "c76ef2d2-68aa-44fc-b454-8ca44cc876ab",
+      "mother": "53ac41f3-9aab-46f3-a597-85f724a73c3d"
+    }
+  },
+  {
+    "id": "61ed3184-6bf5-4a43-97ae-383038e680df",
+    "data": {
+      "gender": "M",
+      "first name": "Abel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "c76ef2d2-68aa-44fc-b454-8ca44cc876ab",
+      "mother": "53ac41f3-9aab-46f3-a597-85f724a73c3d"
+    }
+  },
+  {
+    "id": "9aa26f1e-4289-4e10-80ed-5393424bef18",
+    "data": {
+      "gender": "F",
+      "first name": "Maruja",
+      "last name": ""
+    },
+    "rels": {
+      "father": "29f55c98-6ca1-4065-a1d3-4f4608d4af09",
+      "mother": "8422e2d2-62c8-45c7-a642-561e14c75c51",
+      "spouses": [
+        "36b0fa1e-021e-482a-b4ba-7d58a4e3e478"
+      ],
+      "children": [
+        "80927e68-c7c5-4fd7-ad04-4702ad6ee86a",
+        "67928ce3-5f71-49b3-8cae-9e9b1468d0f3"
+      ]
+    }
+  },
+  {
+    "id": "36b0fa1e-021e-482a-b4ba-7d58a4e3e478",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Manuel",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "9aa26f1e-4289-4e10-80ed-5393424bef18"
+      ],
+      "children": [
+        "80927e68-c7c5-4fd7-ad04-4702ad6ee86a",
+        "67928ce3-5f71-49b3-8cae-9e9b1468d0f3"
+      ]
+    }
+  },
+  {
+    "id": "80927e68-c7c5-4fd7-ad04-4702ad6ee86a",
+    "data": {
+      "gender": "M",
+      "first name": "Jose Antonio",
+      "last name": ""
+    },
+    "rels": {
+      "father": "9aa26f1e-4289-4e10-80ed-5393424bef18",
+      "mother": "36b0fa1e-021e-482a-b4ba-7d58a4e3e478",
+      "spouses": [
+        "2557c037-a779-4a6b-a6be-eb20cf2517a9"
+      ],
+      "children": [
+        "aca73508-0026-4f49-a9e8-7038386bce8b",
+        "4bde3f97-27f3-4101-98b1-7fb03691ac3c"
+      ]
+    }
+  },
+  {
+    "id": "67928ce3-5f71-49b3-8cae-9e9b1468d0f3",
+    "data": {
+      "gender": "M",
+      "first name": "Miguel",
+      "last name": ""
+    },
+    "rels": {
+      "father": "9aa26f1e-4289-4e10-80ed-5393424bef18",
+      "mother": "36b0fa1e-021e-482a-b4ba-7d58a4e3e478"
+    }
+  },
+  {
+    "id": "2557c037-a779-4a6b-a6be-eb20cf2517a9",
+    "data": {
+      "gender": "F",
+      "first name": "Monica",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "80927e68-c7c5-4fd7-ad04-4702ad6ee86a"
+      ],
+      "children": [
+        "aca73508-0026-4f49-a9e8-7038386bce8b",
+        "4bde3f97-27f3-4101-98b1-7fb03691ac3c"
+      ]
+    }
+  },
+  {
+    "id": "aca73508-0026-4f49-a9e8-7038386bce8b",
+    "data": {
+      "gender": "M",
+      "first name": "Martin",
+      "last name": ""
+    },
+    "rels": {
+      "father": "80927e68-c7c5-4fd7-ad04-4702ad6ee86a",
+      "mother": "2557c037-a779-4a6b-a6be-eb20cf2517a9"
+    }
+  },
+  {
+    "id": "4bde3f97-27f3-4101-98b1-7fb03691ac3c",
+    "data": {
+      "gender": "F",
+      "first name": "Anxela",
+      "last name": ""
+    },
+    "rels": {
+      "father": "80927e68-c7c5-4fd7-ad04-4702ad6ee86a",
+      "mother": "2557c037-a779-4a6b-a6be-eb20cf2517a9"
+    }
+  },
+  {
+    "id": "a6b95ca3-a2df-4b2e-a50c-af4797e08fc8",
+    "data": {
+      "gender": "M",
+      "first name": "Rafael",
+      "last name": ""
+    },
+    "rels": {
+      "father": "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+      "mother": "11c7932b-c1ce-4180-a1f9-92c05df7af9f"
+    }
+  },
+  {
+    "id": "74ca1b37-a704-4618-bf32-1f8809d8811d",
+    "data": {
+      "gender": "M",
+      "first name": "Sebastian",
+      "last name": ""
+    },
+    "rels": {
+      "father": "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+      "mother": "11c7932b-c1ce-4180-a1f9-92c05df7af9f"
+    }
+  },
+  {
+    "id": "11c7932b-c1ce-4180-a1f9-92c05df7af9f",
+    "data": {
+      "gender": "F",
+      "first name": "Isabel",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "0196916f-f4f3-4966-98a8-8e88d75f7e21"
+      ],
+      "children": [
+        "a6b95ca3-a2df-4b2e-a50c-af4797e08fc8",
+        "74ca1b37-a704-4618-bf32-1f8809d8811d",
+        "8e798c74-f7e1-4fc7-a1ea-5d54af49a22b"
+      ]
+    }
+  },
+  {
+    "id": "8e798c74-f7e1-4fc7-a1ea-5d54af49a22b",
+    "data": {
+      "gender": "F",
+      "first name": "Patricia",
+      "last name": ""
+    },
+    "rels": {
+      "father": "0196916f-f4f3-4966-98a8-8e88d75f7e21",
+      "mother": "11c7932b-c1ce-4180-a1f9-92c05df7af9f"
+    }
+  },
+  {
+    "id": "a9cb9dd8-ef9b-4eb8-b745-ee2b793876e9",
+    "data": {
+      "gender": "F",
+      "first name": "Chelo do Mato",
+      "last name": ""
+    },
+    "rels": {
+      "spouses": [
+        "0b0053a4-f0ab-4bf7-86f5-65e8bc328d63"
+      ],
+      "children": []
+    }
+  }
+]
       ]
     }
 
